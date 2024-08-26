@@ -24,8 +24,9 @@ This is a collection of dotfiles for Fedora Hyprland.
     ```
 1. Install packages
     ```bash
-    sudo dnf install vim kitty hyprland hyprpicker hyprshot hyprlock hypridle hyprpaper hyprcursor waybar waypaper pipewire wireplumber rofi-wayland swaync playerctl mpv grim slurp jq bc xdg-desktop-portal-hyprland wl-clipboard socat cliphist nm-connection-editor dictd wl-clip-persist-git blueman bluez bluez-utils wlogout brightnessctl neofetch solaar breeze-cursor-theme numix-icon-theme-circle meson rustc glib glib2-devel sassc cargo gtk3 gtk3-devel systemd-devel gtk-layer-shell-devel libevdev-devel libinput-devel
+    sudo dnf install vim kitty hyprland hyprpicker hyprshot hyprlock hypridle hyprpaper hyprcursor waybar waypaper pipewire wireplumber rofi-wayland swaync playerctl mpv grim slurp jq bc xdg-desktop-portal-hyprland wl-clipboard socat cliphist nm-connection-editor dictd wl-clip-persist-git blueman bluez bluez-utils wlogout brightnessctl neofetch solaar breeze-cursor-theme numix-icon-theme-circle meson rustc glib glib2-devel sassc cargo gtk3 gtk3-devel systemd-devel gtk-layer-shell-devel libevdev-devel libinput-devel openssl
     ```
+2. Restart and select hyprland as default desktop in login screen
 2. Install vscode
     ```bash
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -95,9 +96,19 @@ This is a collection of dotfiles for Fedora Hyprland.
 - [overskride](https://github.com/kaii-lb/overskride)
 - [iwgtk (Wifi GUI)](https://github.com/J-Lentz/iwgtk)
 
-## Set gkt theme
+## Extras
+
+### Set gkt theme
 ```sh
 gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark"
+```
+
+### Git configurations
+```sh
+git config --global init.defaultBranch main
+git config --global core.editor "vim"
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 ```
 
 ## To do
