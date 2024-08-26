@@ -15,40 +15,42 @@ This is a collection of dotfiles for Fedora Hyprland.
   ```
 
 ## Install packages
+
 1. Enable extra repositories
-    ```bash
-    sudo rpm -Uvh https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-    sudo rpm -Uvh https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    sudo dnf copr enable solopasha/hyprland
-    ```
+   ```bash
+   sudo rpm -Uvh https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+   sudo rpm -Uvh https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+   sudo dnf copr enable solopasha/hyprland
+   sudo dnf copr enable erikreider/SwayNotificationCenter
+   ```
 1. Install packages
-    ```bash
-    sudo dnf install vim kitty hyprland hyprpicker hyprshot hyprlock hypridle hyprpaper hyprcursor waybar waypaper pipewire wireplumber rofi-wayland swaync playerctl mpv grim slurp jq bc xdg-desktop-portal-hyprland wl-clipboard socat cliphist nm-connection-editor dictd wl-clip-persist-git blueman bluez bluez-utils wlogout brightnessctl neofetch solaar breeze-cursor-theme numix-icon-theme-circle meson rustc glib glib2-devel sassc cargo gtk3 gtk3-devel systemd-devel gtk-layer-shell-devel libevdev-devel libinput-devel openssl
-    ```
-2. Restart and select hyprland as default desktop in login screen
-2. Install vscode
-    ```bash
-    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-    sudo dnf check-update
-    sudo dnf install -y code
-    ```
-3. Install flatpak apps
-    ```bash
-    flatpak install flathub io.github.zen_browser.zen
-    flatpak install flathub com.google.Chrome
-    flatpak install flathub org.gnome.Geary
-    flatpak install flathub com.discordapp.Discord
-    flatpak install flathub dev.vencord.Vesktop
-    flatpak install flathub io.github.celluloid_player.
-    flatpak install flathub com.github.PintaProject.Pinta
-    flatpak install flathub io.missioncenter.MissionCenter
-    flatpak install flathub com.github.tchx84.Flatseal
-    flatpak install flathub com.github.wwmm.easyeffects
-    flatpak install flathub md.obsidian.Obsidian
-    flatpak install flathub org.gnome.Extensions
-    ```
+   ```bash
+   sudo dnf install vim kitty hyprland hyprpicker hyprshot hyprlock hypridle hyprpaper hyprcursor waybar waypaper pipewire wireplumber rofi-wayland SwayNotificationCenter playerctl mpv grim slurp jq bc xdg-desktop-portal-hyprland wl-clipboard socat cliphist nm-connection-editor dictd blueman bluez wlogout brightnessctl neofetch solaar breeze-cursor-theme numix-icon-theme-circle meson rustc glib glib2-devel sassc cargo gtk3 gtk3-devel systemd-devel gtk-layer-shell-devel libevdev-devel libinput-devel openssl
+   ```
+1. Install vscode
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+   sudo dnf check-update
+   sudo dnf install -y code
+   ```
+1. Install flatpak apps
+   ```bash
+   flatpak install flathub io.github.zen_browser.zen
+   flatpak install flathub com.google.Chrome
+   flatpak install flathub org.gnome.Geary
+   flatpak install flathub com.discordapp.Discord
+   flatpak install flathub dev.vencord.Vesktop
+   flatpak install flathub io.github.celluloid_player.
+   flatpak install flathub com.github.PintaProject.Pinta
+   flatpak install flathub io.missioncenter.MissionCenter
+   flatpak install flathub com.github.tchx84.Flatseal
+   flatpak install flathub com.github.wwmm.easyeffects
+   flatpak install flathub md.obsidian.Obsidian
+   flatpak install flathub org.gnome.Extensions
+   ```
+
 ## Setup ZSH
 
 - Install ZSH and set as default shell
@@ -87,10 +89,14 @@ This is a collection of dotfiles for Fedora Hyprland.
   - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
   - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
-## Copy config files
+## Copy config files and restart
+
 - Copy the contents of `.config` folder to `~/.config`
 - Copy other files to `~/`
+- Restart and select **Hyprland** in login screen
+
 ## Install other packages
+
 - [SwayOSD](https://github.com/ErikReider/SwayOSD)
 - [Hyprshade](https://github.com/loqusion/hyprshade)
 - [overskride](https://github.com/kaii-lb/overskride)
@@ -99,11 +105,13 @@ This is a collection of dotfiles for Fedora Hyprland.
 ## Extras
 
 ### Set gkt theme
+
 ```sh
 gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark"
 ```
 
 ### Git configurations
+
 ```sh
 git config --global init.defaultBranch main
 git config --global core.editor "vim"
@@ -112,5 +120,7 @@ git config --global user.name "Your Name"
 ```
 
 ## To do
+
 - [ ] Confugure and customize wlogout, remove rofi power menu
 - [ ] Configure hyprpicker shortcut and button in waybar
+- [ ] Create a script to install all packages and copy files
