@@ -22,11 +22,10 @@ This is a collection of dotfiles for Fedora Hyprland.
    sudo rpm -Uvh https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
    sudo dnf copr enable solopasha/hyprland
-   sudo dnf copr enable erikreider/SwayNotificationCenter
    ```
 1. Install packages
    ```bash
-   sudo dnf install vim kitty hyprland hyprpicker hyprshot hyprlock hypridle hyprpaper hyprcursor waybar waypaper pipewire wireplumber rofi-wayland SwayNotificationCenter playerctl mpv grim slurp jq bc xdg-desktop-portal-hyprland wl-clipboard socat cliphist nm-connection-editor dictd blueman bluez wlogout brightnessctl neofetch solaar breeze-cursor-theme numix-icon-theme-circle meson rustc glib glib2-devel sassc cargo gtk3 gtk3-devel systemd-devel gtk-layer-shell-devel libevdev-devel libinput-devel openssl
+   sudo dnf install vim kitty hyprland hyprpicker hyprshot hyprlock hypridle hyprpaper hyprcursor waypaper pipewire wireplumber rofi-wayland playerctl mpv grim slurp jq bc xdg-desktop-portal-hyprland wl-clipboard socat cliphist nm-connection-editor dictd blueman bluez wlogout brightnessctl neofetch solaar breeze-cursor-theme numix-icon-theme-circle meson rustc glib glib2-devel sassc cargo gtk3 gtk3-devel systemd-devel gtk-layer-shell-devel libevdev-devel libinput-devel openssl
    ```
 1. Install vscode
    ```bash
@@ -97,10 +96,9 @@ This is a collection of dotfiles for Fedora Hyprland.
 
 ## Install other packages
 
-- [SwayOSD](https://github.com/ErikReider/SwayOSD)
+- [HyprPanel](https://hyprpanel.com/getting_started/installation.html#fedora)
 - [Hyprshade](https://github.com/loqusion/hyprshade)
 - [overskride](https://github.com/kaii-lb/overskride)
-- [iwgtk (Wifi GUI)](https://github.com/J-Lentz/iwgtk)
 
 ## Extras
 
@@ -119,8 +117,13 @@ git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
 
-## To do
+## FAQ
 
-- [ ] Confugure and customize wlogout, remove rofi power menu
-- [ ] Configure hyprpicker shortcut and button in waybar
-- [ ] Create a script to install all packages and copy files
+#### Styles not applied to HyprPanel on startup
+
+You need to create a symlink for sass from ~/.bun/bin/sass to /usr/bin/sass and create a symlink for bun from ~/.bun/bin/bun to /usr/bin/bun
+
+```bash
+sudo ln -s ~/.bun/bin/sass /usr/bin/sass
+sudo ln -s ~/.bun/bin/bun /usr/bin/bun
+```
