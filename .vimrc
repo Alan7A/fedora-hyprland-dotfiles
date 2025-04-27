@@ -9,15 +9,20 @@ set mouse=a
 set number
 set incsearch
 set noshowmode
-" Use case insensitive search, except when using capital letters
+set termguicolors
 set ignorecase
 set smartcase
+set laststatus=2
 
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
-Plug 'arcticicestudio/nord-vim'
+Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
+colorscheme tokyonight
+hi Normal guibg=NONE ctermbg=NONE
+
 " Vim-Airline settings
+let g:tokyonight_enable_italic = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'nord'
+let g:airline_theme = 'tokyonight'
